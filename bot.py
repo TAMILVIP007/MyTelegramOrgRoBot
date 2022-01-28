@@ -17,6 +17,7 @@
 
 """Telegram Bot"""
 
+
 import logging
 import os
 
@@ -42,8 +43,7 @@ from helper_funcs.helper_steps import (
     compareFiles
 )
 
-WEBHOOK = bool(os.environ.get("WEBHOOK", False))
-if WEBHOOK:
+if WEBHOOK := bool(os.environ.get("WEBHOOK", False)):
     from sample_config import Config
 else:
     from config import Development as Config
